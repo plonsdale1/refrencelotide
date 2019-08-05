@@ -1,9 +1,4 @@
-/*const assertEqual = function(a, b) {
-return a * b
-};
 
-console.assert(assertEqual("Lighthouse Labs", "Bootcamp"));
-console.assert(assertEqual(1, 1));*/
 
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
@@ -13,6 +8,5 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-assertEqual(`"Lighthouse Labs" + "Bootcamp"`);
-assertEqual(1, 1);
+
+module.exports = assertEqual;

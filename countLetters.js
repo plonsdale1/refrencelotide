@@ -31,4 +31,5 @@ const assertEqual = function(actual, expected) {
     console.log("Assertion Failed:", actual, "!==", expected);
   }
 };
-console.log(assertEqual(countLetters("bob hi"), { b: 2, o: 1, h: 1, i: 1}))
+console.log(assertEqual(countLetters("bob hi"), { b: 2, o: 1, h: 1, i: 1}));
+module.exports = countLetters;

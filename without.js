@@ -9,39 +9,43 @@ const assertEqual = function(actual, expected) {
 
 
 const without = function(a, b) {
-  for(let i = 0; i < a.length && b.length; i++) {
-    [i] = a;
-    [i] = b;
-    if(a !== b) {
-      return a;
-    }else {
-      i++;
+  result = [];
+  for(i = 0; i < a.length; i++) {
+
+   let found =  b.find(function(element) {
+      return element === a[i]
+    });
+
+
+    if(found === undefined) {
+      result.push(a[i]);
     }
   }
-}
-
-
-
-
-
-
-
+return result;  
+};
 // const without = function(a, b) {
-//   result = [];
-//   const i = [0];
-//   c = [i];
-//   d = [i];
-//   for(i = 0; i < a.length; i++) {
-//     if([c] === [d]) {
-//       return false
+//     const [x] = results;
+//   let results = [x];
+//     if(a === b) {
+//     i = 0; i < a.length || b.length; i++
 //     }else {
-//       return result
+//       return results; 
 //     }
 //   }
-  
-// };
 
 
 
-console.log(assertEqual(without([1, 2, 3], [1])([2, 3]))); // => [2, 3]
-console.log(assertEqual(without(["1", "2", "3"], [1, 2, "3"])(["1", "2"]))) // => ["1", "2"]
+
+const words = ["hello", "world", "lighthouse"];
+without(["hello", "world", "lighthouse"], ["lighthouse"]); // no need to capture return value for this test case
+// Make sure the original array was not altered by the without function
+assertEqual(words, ["hello", "world", "lighthouse"]);
+
+
+
+
+
+
+
+console.log(assertEqual(without([1, 2, 3], [1]), ([2, 3]))); // => [2, 3]
+console.log(assertEqual(without(["1", "2", "3"], [1, 2, "3"]), (["1", "2"]))) // => ["1", "2"]

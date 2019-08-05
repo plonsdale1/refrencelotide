@@ -27,3 +27,4 @@ const assertEqual = function(actual, expected) {
   }
 };
 assertEqual(letterPositions("lighthouse in the house").e, [1]);
+module.exports = letterPositions;
